@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="generateButton">Generate Lorem Ipsum</button>
+    <p id="loremText"></p>
+
+    <script>
+      const loremElements = [
+        "Lorem",
+        "ipsum",
+        "dolor",
+        "sit",
+        "amet",
+        "consectetur",
+        "adipiscing",
+        "elit",
+        "sed",
+        "do",
+        "eiusmod",
+        "tempor",
+        "incididunt",
+        "ut",
+        "labore",
+        "et",
+        "dolore",
+        "magna",
+        "aliqua.",
+      ];
+
+      function generateLoremIpsum() {
+        const numWords = 50; // Adjust the number of words as needed
+        const loremText = [];
+
+        for (let i = 0; i < numWords; i++) {
+          const randomIndex = Math.floor(Math.random() * loremElements.length);
+          loremText.push(loremElements[randomIndex]);
+        }
+
+        document.getElementById("loremText").textContent = loremText.join(" ");
+      }
+
+      document
+        .getElementById("generateButton")
+        .addEventListener("click", generateLoremIpsum);
+    </script>
+  </body>
+</html>
